@@ -1,0 +1,11 @@
+# https://tokotech.live
+
+User-agent: *
+Allow: /
+
+# Disallow admin pages
+Disallow: /admin/
+Disallow: /admin/*
+
+# Sitemaps
+Sitemap: https://tokotech.live/sitemap.xml
