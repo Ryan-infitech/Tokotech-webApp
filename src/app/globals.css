@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Add these styles to ensure header visibility and proper layout */
+header {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+
+/* Ensure mobile menu displays properly */
+header {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Fix mobile menu rendering */
+@media (max-width: 767px) {
+  header {
+    transition: background-color 0.3s ease;
+  }
+
+  /* Make sure mobile menu has proper spacing */
+  header + div:not(.container-custom) {
+    padding-top: 64px;
+  }
+}
+
+/* Main content should flex-grow to push footer down */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 0;
+}
+
+/* Hero container should touch the top of the main area */
+.hero-section {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+
+  .page-title {
+    @apply text-3xl md:text-4xl font-bold mb-6 text-foreground;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title {
+    @apply text-2xl md:text-3xl font-semibold mb-4 text-foreground;
+  }
+
+  .card {
+    @apply bg-background rounded-lg shadow-card overflow-hidden transition-shadow duration-300 hover:shadow-card-hover;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white px-4 py-2 rounded-md transition duration-300 hover:bg-foreground focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-primary border border-primary px-4 py-2 rounded-md transition duration-300 hover:bg-light-gray focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary;
+  }
+
+  .btn-accent {
+    @apply bg-accent text-white px-4 py-2 rounded-md transition duration-300 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent;
+  }
+
+  .account-section {
+    margin-bottom: 2rem;
+  }
+
+  .account-section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+  }
+}
+
+/* About page utilities */
+.container-custom {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
