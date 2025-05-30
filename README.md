@@ -6,7 +6,7 @@
 
 # Toko Tech - Professional E-Commerce Platform
 
-![Toko Tech](public\images\og-image.png)
+![Toko Tech](https://github.com/Ryan-infitech/Tokotech-webApp/blob/main/public/images/og-image.png?raw=true)
 
 ## Overview
 
